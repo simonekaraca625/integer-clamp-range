@@ -24,3 +24,10 @@ The trade-off: inputs are restricted to safe integers. If you need float behavio
 - **Negative inputs to `wrap`**: uses mathematical modulo, so `wrap(-1, 0, 6) === 6`, not `-1`. This is the behaviour cyclic coordinate systems expect.
 - **Non-integer inputs**: rejected with a `TypeError`. The operations are only meaningful for discrete values.
 - **Unsafe integers** (beyond ±2^53): rejected with a `TypeError` to prevent silent precision loss.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
