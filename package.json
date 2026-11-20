@@ -1,6 +1,6 @@
 {
   "name": "integer-clamp-range",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Clamps, wraps, and reflects integer values into bounded ranges for modular coordinate systems.",
   "type": "module",
   "main": "src/index.js",
